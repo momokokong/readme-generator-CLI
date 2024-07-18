@@ -1,11 +1,17 @@
-// TODO: Include packages needed for this application
+// index.js
+// This file is the starting point of the README generator which prepares the required modules, 
+// initialize constant variables, set up prompts and validations, then call the generateMarkdown module
+// to process user inputs and save the generated README.md in ./md/ 
+// The generator requires npm modules inquirer, colors, validator, and EM6 module fs, and a self-made module generateMarkdown.
+
+// init the modules as global variables
 const inquire = require("inquirer");
 const color = require("colors");
 const validator = require("validator");
 const fs = require('fs');
 const readmeGen = require("./utils/generateMarkdown.js");
 
-// TODO: Create an array of questions for user input
+// constant questions.  not expecting to have any changes.
 const questions = [
   "\n============================\n May I have your user name?\n============================\n",
   "\n============================\n and email address?\n============================\n",
@@ -18,6 +24,7 @@ const questions = [
   "\n============================\n Tests\n============================\n",
 ];
 
+// constant licenses.  not expecting to have any changes.
 const licenses = [
   "WTFPL",
   "MIT",
@@ -27,11 +34,15 @@ const licenses = [
   "No license"
 ]
 
-// TODO: Create a function to write README file
+// function writeToFile(data)
+// write data to ./md/README.md
+// parameter:
+//   data: string that contains the whole README.md content returned from generateMarkdown
 function writeToFile(data) {
   fs.writeFile("./md/README.md", readmeGen.generateMarkdown(data), (err) =>
     err ? console.log(err) : console.log(color.rainbow("\nCheck ./md for the generated README.md")));
 }
+
 
 function checkEmail(str) {
   if (validator.isEmail(str)) {
@@ -114,6 +125,7 @@ function collectReadme() {
 }
 // TODO: Create a function to initialize app
 function init() {
+  console.log("\n"+ color.bgBrightYellow.black("README.md generator.  The output will be at ./md/README.md.  You must enter something for each question"));
   collectReadme();
 }
 
