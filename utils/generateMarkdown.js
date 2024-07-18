@@ -68,13 +68,20 @@ function renderRegularSection (secTitle, content) {
 }
 
 function insertTableOfContent(title) {
-  return "\n\n## Table of content\n" + "- " + title + "\n  -[Description](#Description)";
+  return "\n\n## Table of content" + "\n- " + title + 
+  "\n\n  - [Description](#Description)" +
+  "\n\n  - [Installation](#Installation)" +
+  "\n\n  - [Usage](#Usage)" +
+  "\n\n  - [Contributing](#Contributing)" +
+  "\n\n  - [Tests](#Tests)" +
+  "\n\n  - [License](#License)" +
+  "\n\n  - [Questions](#Questions)";
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const {username, email, title, description, installation, usage, license, contributing, tests} = data;
-  // const regularSections =
+
   return renderTitleSection(title, license) + 
   insertTableOfContent(title) +
   renderRegularSection("Description" , description) + 
