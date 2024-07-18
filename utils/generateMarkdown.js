@@ -19,15 +19,32 @@ function renderLicenseBadge(license) {
   }
 }
 
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
-// function renderLicenseLink(license) {}
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {
+  switch (license) {
+    case "WTFPL":
+      return "[License: WTFPL](http://www.wtfpl.net/about/)";
+    case "MIT":
+      return "[License: MIT](https://opensource.org/licenses/MIT)";
+    case "BSD 3-Clause":
+      return "[License: BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)";
+    case "CC0":
+      return "[License: CC0-1.0](http://creativecommons.org/publicdomain/zero/1.0/)";
+    case "GNU GPL v3":
+      return "[License: GPL v3](https://www.gnu.org/licenses/gpl-3.0)";
+    case "No license":
+      return "";
+    default:
+      return "How did you get here? License";
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license === "No license") return "";
-  return "\n# License\nThis project adopts " + license + "license practices. "  
+  return "\n# License\nThis project adopts " + license + "license practices. Check the website for license details.\n" + renderLicenseLink(license);  
 }
 
 function renderGithubLink(username) {
