@@ -30,7 +30,7 @@ const licenses = [
 // TODO: Create a function to write README file
 function writeToFile(data) {
   fs.writeFile("./md/README.md", readmeGen.generateMarkdown(data), (err) =>
-    err ? console.log(err) : console.log('README.md saved in ./md!'));
+    err ? console.log(err) : console.log(color.rainbow("\nCheck ./md for the generated README.md")));
 }
 
 function checkEmail(str) {
