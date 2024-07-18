@@ -37,7 +37,7 @@ const licenses = [
 // function writeToFile(data)
 // write data to ./md/README.md
 // parameter:
-//   data: string that contains the whole README.md content returned from generateMarkdown
+//   data: string, contains the whole README.md content returned from generateMarkdown
 function writeToFile(data) {
   fs.writeFile("./md/README.md", readmeGen.generateMarkdown(data), (err) =>
     err ? console.log(err) : console.log(color.rainbow("\nCheck ./md for the generated README.md.  See ya!")));
@@ -46,7 +46,7 @@ function writeToFile(data) {
 // function checkEmail(str)
 // validate str on whether it's a valid email.  Used by the prompts.
 // parameter:
-//   str: str, the user's current input
+//   str: string, the user's current input
 function checkEmail(str) {
   if (validator.isEmail(str)) {
     return true;
@@ -57,7 +57,7 @@ function checkEmail(str) {
 // function checkEmpty(str)
 // validate str on whether the user entered something.  Used by the prompts.
 // parameter:
-//   str: str, the user's current input
+//   str: string, the user's current input
 function checkEmpty(str) {
   if (!validator.isEmpty(str.trim())) {
     return true;
