@@ -47,8 +47,7 @@ function checkEmpty(str) {
   return color.bgRed("You must enter something.  Try again");
 }
 
-// TODO: Create a function to initialize app
-function init() {
+function collectReadme() {
   inquire.prompt([
     {
       type: 'input',
@@ -112,6 +111,10 @@ function init() {
   .catch((error) => 
      console.log(error)
   );
+}
+// TODO: Create a function to initialize app
+function init() {
+  collectReadme();
 }
 
 // Function call to initialize app

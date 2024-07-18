@@ -69,13 +69,13 @@ function renderRegularSection (secTitle, content) {
 
 function insertTableOfContent(title) {
   return "\n\n## Table of content" + "\n- " + title + 
-  "\n\n  - [Description](#Description)" +
-  "\n\n  - [Installation](#Installation)" +
-  "\n\n  - [Usage](#Usage)" +
-  "\n\n  - [Contributing](#Contributing)" +
-  "\n\n  - [Tests](#Tests)" +
-  "\n\n  - [License](#License)" +
-  "\n\n  - [Questions](#Questions)";
+  "\n  - [Description](#Description)" +
+  "\n  - [Installation](#Installation)" +
+  "\n  - [Usage](#Usage)" +
+  "\n  - [Contributing](#Contributing)" +
+  "\n  - [Tests](#Tests)" +
+  "\n  - [License](#License)" +
+  "\n  - [Questions](#Questions)";
 }
 
 // TODO: Create a function to generate markdown for README
