@@ -136,7 +136,7 @@ function collectReadme() {
 // function init()
 // Prep the user regarding what this is then invoke collectReadme to start generating README.md.
 function init() {
-  console.log("\n"+ color.bgBrightYellow.black("README.md generator.  The output will be at ./md/README.md.  You must enter something for each question"));
+  console.log("\n"+ color.rainbow("README.md generator.  The output will be at ./md/README.md.  You must enter something for each question."));
   collectReadme();
 }
 
