@@ -16,13 +16,12 @@ const questions = [
   "\n============================\n Any license?\n============================\n",
   "\n============================\n Contributing?\n============================\n",
   "\n============================\n Tests\n============================\n",
-  "\n============================\n Questions\n============================\n",
 ];
 
 const licenses = [
   "WTFPL",
   "MIT",
-  "BSD 3-Clause License",
+  "BSD 3-Clause",
   "CC0",
   "GNU GPL v3",
   "No license"
@@ -106,13 +105,6 @@ function init() {
       name: "tests",
       validate: checkEmpty,
     },
-    {
-      type: 'input',
-      message: color.inverse(questions[9]),
-      name: "questions",
-      validate: checkEmpty,
-    },
-
   ])
   .then((readme) =>
     writeToFile(readme)
