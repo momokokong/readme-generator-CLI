@@ -15,7 +15,7 @@ function renderLicenseBadge(license) {
     case "No license":
       return "";
     default:
-      return "How did you get here? License";
+      return "How did you get here? License badge";
   }
 }
 
@@ -36,15 +36,15 @@ function renderLicenseLink(license) {
     case "No license":
       return "";
     default:
-      return "How did you get here? License";
+      return "How did you get here? License link";
   }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license === "No license") return "";
-  return "\n# License\nThis project adopts " + license + "license practices. Check the website for license details.\n" + renderLicenseLink(license);  
+  if (license === "No license") return "\n## License\nNo license so far. Contact me for any questions.";
+  return "\n## License\nThis project adopts " + license + "license practices. Check the website for license details.\n" + renderLicenseLink(license);  
 }
 
 function renderGithubLink(username) {
@@ -59,10 +59,13 @@ function renderQuestionsSection (username, email) {
   return "\n## Questions\n" + renderGithubLink(username) + "\n" + renderEmailLink(email);
 }
 
-// function 
+function renderTitlesection (title) {
+  return "# " + title + "\n" + renderLicenseBadge;
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  // const {}
   return `# ${data.title}
 
 `;
