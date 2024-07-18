@@ -40,10 +40,13 @@ const licenses = [
 //   data: string that contains the whole README.md content returned from generateMarkdown
 function writeToFile(data) {
   fs.writeFile("./md/README.md", readmeGen.generateMarkdown(data), (err) =>
-    err ? console.log(err) : console.log(color.rainbow("\nCheck ./md for the generated README.md")));
+    err ? console.log(err) : console.log(color.rainbow("\nCheck ./md for the generated README.md.  See ya!")));
 }
 
-
+// function checkEmail(str)
+// validate str on whether it's a valid email.  Used by the prompts.
+// parameter:
+//   str: str, the user's current input
 function checkEmail(str) {
   if (validator.isEmail(str)) {
     return true;
@@ -51,6 +54,10 @@ function checkEmail(str) {
   return color.bgRed("Not an valid email.  Try again.");
 }
 
+// function checkEmpty(str)
+// validate str on whether the user entered something.  Used by the prompts.
+// parameter:
+//   str: str, the user's current input
 function checkEmpty(str) {
   if (!validator.isEmpty(str.trim())) {
     return true;
@@ -58,6 +65,8 @@ function checkEmpty(str) {
   return color.bgRed("You must enter something.  Try again");
 }
 
+// function collectReadme()
+// invoke prompts to collect user inputs, then invoke generateMarkdown to generate the string content and pass that to writeToFile.
 function collectReadme() {
   inquire.prompt([
     {
@@ -123,7 +132,9 @@ function collectReadme() {
      console.log(error)
   );
 }
-// TODO: Create a function to initialize app
+
+// function init()
+// Prep the user regarding what this is then invoke collectReadme to start generating README.md.
 function init() {
   console.log("\n"+ color.bgBrightYellow.black("README.md generator.  The output will be at ./md/README.md.  You must enter something for each question"));
   collectReadme();
