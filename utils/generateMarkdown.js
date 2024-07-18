@@ -43,8 +43,8 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license === "No license") return "\n## License\nNo license so far. Contact me for any questions.";
-  return "\n## License\nThis project adopts " + license + "license practices. Check the website for license details.\n" + renderLicenseLink(license);  
+  if (license === "No license") return "\n\n## License\nNo license so far. Contact me for any questions.";
+  return "\n\n## License\nThis project adopts " + license + " license practices. Check the website for license details: " + renderLicenseLink(license);  
 }
 
 function renderGithubLink(username) {
@@ -56,19 +56,34 @@ function renderEmailLink(email) {
 }
 
 function renderQuestionsSection (username, email) {
-  return "\n## Questions\n" + renderGithubLink(username) + "\n" + renderEmailLink(email);
+  return "\n\n## Questions\n" + renderGithubLink(username) + "\n\n" + renderEmailLink(email);
 }
 
-function renderTitlesection (title) {
-  return "# " + title + "\n" + renderLicenseBadge;
+function renderTitleSection (title, license) {
+  return "# " + title + "\n" + renderLicenseBadge(license);
+}
+
+function renderRegularSection (secTitle, content) {
+  return "\n\n## " + secTitle + "\n" + content;
+}
+
+function insertTableOfContent(title) {
+  return "\n\n## Table of content\n" + "- " + title + "\n  -[Description](#Description)";
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  // const {}
-  return `# ${data.title}
-
-`;
+  const {username, email, title, description, installation, usage, license, contributing, tests} = data;
+  // const regularSections =
+  return renderTitleSection(title, license) + 
+  insertTableOfContent(title) +
+  renderRegularSection("Description" , description) + 
+  renderRegularSection("Installation" , installation) + 
+  renderRegularSection("Usage" , usage) +
+  renderRegularSection("Contributing" , contributing) + 
+  renderRegularSection("Tests" , tests) +
+  renderLicenseSection(license) + 
+  renderQuestionsSection(username, email);
 }
 
 module.exports = {

@@ -71,7 +71,7 @@ function init() {
     {
       type: 'input',
       message: color.inverse(questions[3]),
-      name: "desc",
+      name: "description",
       validate: checkEmpty,
     },
     {
