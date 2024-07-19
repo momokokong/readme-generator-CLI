@@ -1,35 +1,56 @@
-# das
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+# readme-generator-CLI
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
 
 ## Table of content
-- das
+- readme-generator-CLI
   - [Description](#Description)
   - [Installation](#Installation)
   - [Usage](#Usage)
   - [Contributing](#Contributing)
-  - [Tests](#Tests)
   - [License](#License)
   - [Questions](#Questions)
 
 ## Description
-dsada
+This is a README generator that quickly create a README.md for a new project. 
 
 ## Installation
-dasdas
+- The generator requires npm.  [See Node.js installation.](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+1. Clone the repo: https://github.com/momokokong/readme-generator-CLI
+2. In the terminal, move to where the cloned local repo is.
+3. `npm install`
+   - If it does not automatically install the required module, follow below instructions:
+     - `npm i colors`
+     - `npm i validator`
+     - `npm i inquirer@8.2.4`
+4. Ready to use after the modules are installed
+
 
 ## Usage
-dasdsa
+node index.js
+1. Once the modules are installed, start the generator by `node index.js`.
+2. Follow the on-screen instructions.
+   - It validate user inputs.  All questions must be answered with non-empty answer or valid email format.
+3. The output README.md will be in the folder md/.
+
+## Screenshot
+Starting the generator:  
+![Starting](./screenshot/Starting.png)
+Should not have empty entry:  
+![validation1](./screenshot/validation1.png)
+Require valid email entry:  
+![validation2](./screenshot/validation2.png)
+Questions required for README.md:  
+![questions](./screenshot/questions.png)
+The end:  
+![ending](./screenshot/ending.png)
 
 ## Contributing
-dsadsa
-
-## Tests
-tgerge
+Contact me.  Find my information in the [Questions](#Questions) section.
 
 ## License
-This project adopts GNU GPL v3 license practices. Check the website for license details: [License: GPL v3](https://www.gnu.org/licenses/gpl-3.0)
+This project adopts WTFPL license practices. Check the website for license details: [License: WTFPL](http://www.wtfpl.net/about/)
 
 ## Questions
-[a's Github profile.](https://github.com/a)
+[momokokong's GitHub profile.](https://github.com/momokokong)
 
-[Contact me at koko@koko.com](mailto:koko@koko.com)
+[Po Shin Huang Linkedin profile](https://www.linkedin.com/in/poshinhuang/)
