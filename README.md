@@ -6,6 +6,7 @@
   - [Description](#Description)
   - [Installation](#Installation)
   - [Usage](#Usage)
+  - [Screenshot](#Screenshot)
   - [Contributing](#Contributing)
   - [License](#License)
   - [Questions](#Questions)
